@@ -1,0 +1,63 @@
+.sd-specification-tabs {
+    &__nav {
+        @include reset('list');
+
+        display: flex;
+        margin-bottom: 60px;
+        justify-content: center;
+
+        @include respond-to('not-desktop') {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__nav-item {
+        border: 1px solid #c4beb6;
+        position: relative;
+        color: #c4beb6;
+        font-size: 15px;
+        font-weight: 400;
+
+        & + & {
+            margin-left: -1px;
+        }
+
+        &:first-child {
+            border-radius: 4px 0 0 4px;
+        }
+
+        &:last-child {
+            border-radius: 0 4px 4px 0;
+        }
+
+        &.is-active {
+            border-color: #222222;
+            color: #222222;
+            z-index: z(1);
+        }
+    }
+
+    &__nav-btn {
+        display: block;
+        line-height: 40px;
+        padding: 0 22px;
+        min-width: 170px;
+        color: inherit;
+        text-decoration: none;
+        text-align: center;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__content {
+        @include reset('list');
+    }
+
+    &__tab {
+        display: none;
+        list-style: none;
+        padding: 0;
+    }
+}

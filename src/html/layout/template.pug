@@ -1,0 +1,15 @@
+include ../utils/variables/index
+include ../utils/mixins/index
+
+doctype html
+html
+    head
+        include ../head/head
+    body.l-core
+        .l-core__header
+            include ../components/header
+        main.l-core__main
+            .l-container
+                block main-content
+        .l-core__footer
+            include ../components/footer

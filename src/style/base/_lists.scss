@@ -1,0 +1,42 @@
+@mixin list($type) {
+    %list-#{$type} {
+        @extend %list !optional;
+        @content;
+    }
+
+    .sd-list-#{$type} {
+        @content;
+    }
+}
+
+%list,
+[class*='sd-list'] {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@include list('html-icon') {
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.8em;
+    }
+
+    &__img {
+        flex-shrink: 0;
+        margin-right: 25px;
+        margin-top: 5px;
+    }
+}
+
+@include list('logo') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &__item {
+        padding: 25px;
+    }
+}

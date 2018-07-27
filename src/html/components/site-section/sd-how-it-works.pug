@@ -1,0 +1,12 @@
++site-section('padding', 'gray')
+        .sd-how-container
+            .l-container
+                .sd-how-container__header(data-aos= 'zoom-in' data-aos-duration= 700)
+                    .sd-how-container__title
+                        h2.sd-title-reg How it all works
+                    p
+                        | The Lenovo Smart Display doesn't just have the Google Assistant built in. It has a host of great hardware features, too
+                .sd-how-container__details
+                    each detail in details
+                        +sd-detail(detail)
+

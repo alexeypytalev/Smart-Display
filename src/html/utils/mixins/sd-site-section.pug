@@ -1,0 +1,5 @@
+mixin site-section(...modifiers)
+    - var className = modifiers ? modifiers.map((modifier) => `sd-site-section--${modifier}`) : ''
+
+    section.sd-site-section(class= className)
+        block

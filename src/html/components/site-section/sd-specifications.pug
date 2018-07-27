@@ -1,0 +1,17 @@
++site-section('padding', 'gray')
+    - var specificationsKeys = Object.keys(specifications);
+
+    .l-container
+        h2.sd-title-reg Specifications
+        div.sd-specification-tabs.js-tabs
+            ul.sd-specification-tabs__nav
+                each id in specificationsKeys
+                    li.sd-specification-tabs__nav-item
+                        a.sd-specification-tabs__nav-btn.js-tabs-btn(href= `#spcf-${id}`)= `${id}’’ Smart Display`
+            ul.sd-specification-tabs__content.js-tabs-content
+                each id in specificationsKeys
+                    li.sd-specification-tabs__tab(id= `spcf-${id}`)
+                        ul.l-specification-list
+                            each specification in Object.keys(specifications[id])
+                                li
+                                    +sd-specification(specification, id)

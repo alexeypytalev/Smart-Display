@@ -1,0 +1,83 @@
+.sd-hero {
+    position: relative;
+
+    &__content {
+        @include absolute(top left right bottom);
+
+        display: flex;
+        align-items: center;
+        background-color: rgba(#000, .5);
+        z-index: z(1);
+    }
+
+    &__video-bg {
+        overflow: hidden;
+        max-height: 100vh;
+
+        @include respond-to('not-mobiles') {
+            .ytplayer-container {
+                @include embed;
+            }
+        }
+    }
+
+    &__header {
+        width: 100%;
+        line-height: 1.3;
+        color: #fff;
+        padding: 0 20px;
+
+        @include respond-to(min $tablet-wide) {
+            max-width: 75%;
+        }
+    }
+
+    &__title {
+        margin: 0 0 30px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__descr {
+        @include reset('inner-space');
+
+        font-size: 35px;
+        margin: 0 0 40px;
+
+        @include respond-to('mobiles') {
+            font-size: 25px;
+        }
+    }
+
+    &__descr-quote {
+        padding-top: .75em;
+        display: block;
+        font-size: 18px;
+
+        @include respond-to('mobiles') {
+            text-align: right;
+        }
+    }
+
+    &__actions {
+        text-transform: uppercase;
+        display: flex;
+        margin: 0 -10px;
+
+        .sd-btn-light {
+            margin: 0 10px;
+            min-width: 220px;
+        }
+
+        @include respond-to('mobiles') {
+            flex-wrap: wrap;
+
+            .sd-btn-light {
+                width: 100%;
+                margin-bottom: 17px;
+            }
+        }
+    }
+}

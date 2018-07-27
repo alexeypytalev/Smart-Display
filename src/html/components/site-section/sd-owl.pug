@@ -1,0 +1,18 @@
++site-section('padding', 'autoplay')
+    .l-container
+        .sd-tile
+            .sd-tile__section.sd-tile__section--img.owl-carousel.js-sd-owl-autoplay
+                each slide in askSlides
+                    img(src= slide.img, alt= slide.msg)
+            .sd-tile__section.sd-tile__section--info
+                .sd-tile__inner
+                    .sd-tile__line.sd-tile__line--title
+                        h3.sd-title-reg Just ask & you’ll see with the Lenovo Smart Display
+                    .sd-tile__line.sd-tile__line--msg.owl-carousel.js-sd-owl-autoplay
+                        each slide in askSlides
+                            span.sd-tile__msg= slide.msg
+                    .sd-tile__line.sd-tile__line--descr
+                        | Make every day easier—and your home smarter. Want to watch celebrity chefs, call the family, remember a birthday, or get the weather? Just say "Hey Google" to get started. Stylish and easy to use, the Lenovo Smart Display is there to help, inform, or entertain. Any time.
+        ul.sd-list-logo
+            each logo in ['google-assistant', 'google-chromecast', 'google-duo', 'google-photos', 'youtube', 'spotify', 'nest', 'philips-hue']
+                li.sd-list-logo__item: img(src= `img/html/logos/${logo}.png` alt= logo)

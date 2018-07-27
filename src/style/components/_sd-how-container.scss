@@ -1,0 +1,50 @@
+.sd-how-container {
+    &__header {
+        max-width: 570px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 95px;
+
+        @include respond-to('tablet') {
+            margin-bottom: 65px;
+        }
+
+        @include respond-to('mobiles') {
+            margin-bottom: 40px;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 5px;
+
+        .sd-title-reg {
+            margin: 0;
+        }
+    }
+
+    &__details {
+        position: relative;
+
+        @include respond-to('desktop') {
+            height: 685px;
+        }
+
+        @include respond-to('tablet-wide') {
+            height: 610px;
+        }
+
+        @include respond-to('tablet') {
+            height: 570px;
+        }
+
+        @include respond-to(max $tablet - 1) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+}

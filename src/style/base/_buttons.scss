@@ -1,0 +1,58 @@
+@mixin btn($type) {
+    %btn-#{$type} {
+        @extend %btn !optional;
+        @content;
+    }
+
+    .sd-btn-#{$type} {
+        @content;
+    }
+}
+
+%btn,
+[class*='sd-btn'] {
+    @include reset('form');
+    @include text('truncate');
+
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@include btn('x-green') {
+    @include retina-sprite($s-x-group);
+}
+
+@include btn('light') {
+    height: 49px;
+    border: 1px solid #fefefe;
+    font-size: 16px;
+    line-height: 45px;
+    padding: 0 1.5em;
+    color:  #fefefe;
+    text-transform: uppercase;
+    border-radius: 2px;
+    font-weight: 700;
+}
+
+.sd-btn-blue {
+    border-radius: 2px;
+    background-color: #009dd9;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 50px;
+    padding: 0 2em;
+    transition: background-color .2s;
+
+    &:hover {
+        background-color: darken(#009dd9, 15%);
+    }
+}

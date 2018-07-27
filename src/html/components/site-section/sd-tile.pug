@@ -1,0 +1,15 @@
++site-section
+    - for (var i = 0; i < sdTiles.length; i++ )
+        +sd-tile(sdTiles[i])
+            - var popupContent = sdTiles[i]['popupContent']
+            - var list = popupContent['list']
+            - var copyright = popupContent['copyright']
+
+            if list
+                ul.sd-list-html-icon
+                    each li in list
+                        li.sd-list-html-icon__item
+                            img.sd-list-html-icon__img(src= li.img, alt= li.img)
+                            | #{li.text}
+            if copyright
+                .sd-tile__copyright= copyright

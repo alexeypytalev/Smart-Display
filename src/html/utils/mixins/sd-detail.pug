@@ -1,0 +1,12 @@
+mixin sd-detail(data)
+    - var {modifier, img, descr, aos} = data
+    - var {effect, duration} = aos
+
+    .sd-detail(class= `sd-detail--${modifier}` data-aos= effect data-aos-duration= duration)
+        .sd-detail__img
+            img(src= img, alt= modifier)
+        if descr
+            .sd-detail__descr-wrap
+                each value, index in descr
+                    .sd-detail__descr(class= descr.length > 1 ? `sd-detail__descr--${index + 1}` : '')= value
+                        span.sd-detail__pointer

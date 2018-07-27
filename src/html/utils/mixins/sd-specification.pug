@@ -1,0 +1,20 @@
+mixin sd-specification(specificationName, id)
+    - var specification = specifications[id][specificationName]
+
+    .sd-specification
+        .sd-specification__title= specificationName
+        if block
+            block
+        ul.sd-specification__list
+            - for (var type in specification)
+                if type == 'untitled'
+                    li.sd-specification__list-item=  specification['untitled'].join(', ')
+                else
+                    li.sd-specification__list-item
+                        span.sd-specification__label= type
+                        span.sd-specification__sep
+                        span.sd-specification__value
+                            | !{specification[type]}
+                    
+
+

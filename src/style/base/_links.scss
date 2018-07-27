@@ -1,0 +1,35 @@
+@mixin link($type) {
+    %link-#{$type} {
+        @extend %link !optional;
+        @content;
+    }
+
+    .sd-link-#{$type} {
+        @content;
+    }
+}
+
+%link,
+[class*='sd-link'] {
+    cursor: pointer;
+    text-decoration: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@include link('cplus') {
+    display: inline-flex;
+    align-items: center;
+    color: #009dd9;
+    
+
+    &:before {
+        @include retina-sprite($s-plus-group);
+
+        display: block;
+        content: '';
+        margin-right: .5em;
+    }
+}

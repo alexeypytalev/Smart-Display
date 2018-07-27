@@ -1,0 +1,26 @@
+@mixin form-element($type) {
+    @if $type == 'input' {
+        //...
+
+    } @else if $type == 'textarea' {
+        //...
+
+    } @else if $type == 'select' {
+        //...
+
+    } @else if $type == 'label-radio' {
+        //...
+
+    } @else if $type == 'label-radio:checked' {
+        //...
+
+    } @else if $type == 'label-checkbox' {
+        //...
+
+    } @else if $type == 'label-checkbox:checked' {
+        //...
+
+    } @else {
+        @warn 'Invalid argument $type: #{$type}';
+    }
+}

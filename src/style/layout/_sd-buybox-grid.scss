@@ -1,0 +1,16 @@
+.l-sd-buybox-grid {
+    @include reset('list');
+    @include grid(desktop);
+    @include grid-gutter(desktop 24px null);
+    @include grid-cols {
+        @include grid-col(desktop 50%);
+        
+        @include respond-to('desktop') {
+            display: flex;
+        }
+
+        margin-top: 20px;
+    }
+
+    margin-top: -20px;
+}

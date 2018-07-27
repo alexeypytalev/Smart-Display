@@ -1,0 +1,29 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Start pack for Front-end develop",
+  "author": "A.Pytaliev",
+  "license": "MIT",
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp-notify": "^3.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "latest",
+    "gulp-if": "^2.0.2",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "latest",
+    "gulp-pug": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-watch": "latest",
+    "gulp.spritesmith": "latest",
+    "run-sequence": "^2.2.1"
+  }
+}

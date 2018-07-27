@@ -1,0 +1,24 @@
+mixin sd-tile(data)
+    .sd-tile(class= data.popupContent ? 'js-tile-container' : '')
+        .sd-tile__section.sd-tile__section--img
+            img(src= data.img, alt= data.title)
+        .sd-tile__section.sd-tile__section--info
+            .sd-tile__inner
+                if data.title
+                    .sd-tile__line.sd-tile__line--title
+                        h3.sd-title-reg= data.title
+                if data.msg
+                    .sd-tile__line.sd-tile__line--msg
+                        span.sd-tile__msg= data.msg
+                if data.descr
+                    .sd-tile__line.sd-tile__line--descr= data.descr
+                if data.link
+                    .sd-tile__line.sd-tile__line--link
+                        a.sd-link-cplus(class= data.popupContent ? 'js-tile-control' : ''  href='#')
+                            | !{data.link}
+        if data.popupContent
+            .sd-tile__popup.js-tile-content
+                a.sd-tile__popup-close.sd-btn-x-green.js-tile-control
+                .sd-tile__popup-content
+                    .l-container
+                        block

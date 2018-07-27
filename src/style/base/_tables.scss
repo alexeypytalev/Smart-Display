@@ -1,0 +1,15 @@
+@mixin table($type) {
+    %table-#{$type} {
+        @extend %table !optional;
+        @content;
+    }
+
+    .sg-table-#{$type} {
+        @content;
+    }
+}
+
+%table,
+[class*='sg-table'] {
+
+}

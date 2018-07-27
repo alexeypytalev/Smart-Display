@@ -59,3 +59,13 @@ typings/
 
 # next.js build output
 .next
+
+# Sublime data
+*.sublime-project
+*.sublime-workspace
+
+# Public folder
+public/
+
+# SCSS files
+src/style/vendors/gulp-spritesmith/

@@ -1,0 +1,19 @@
+.l-specification-list {
+    @include reset('list');
+    
+    display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+
+    @include respond-to(min $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('desktop') {
+        grid-column-gap: 70px;
+    }
+
+    > li:nth-child(3) {
+        grid-row:  2 / span 4;
+    }
+}

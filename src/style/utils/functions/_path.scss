@@ -1,0 +1,22 @@
+@function path($path, $file: null) {
+    $path-value: map-get($paths, $path);
+
+    @if not map-has-key($paths, $path) {
+        @warn 'Unknown key "#{$path}" in $paths';
+        @return null;
+    }
+
+    @return if($file, $path-value + '/' + $file, $path-value);
+}
+
+@function img($file) {
+    @return url(path('img', $file));
+}
+
+@function svg($file) {
+    @return url(path('svg', $file));
+}
+
+@function font-face($file) {
+    @return url(path('font', $file));
+}

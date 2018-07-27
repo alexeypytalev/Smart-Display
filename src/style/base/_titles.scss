@@ -1,0 +1,31 @@
+@mixin title($type) {
+    %title-#{$type} {
+        @extend %title !optional;
+        @content;
+    }
+
+    .sd-title-#{$type} {
+        @content;
+    }
+}
+
+%title,
+[class*='sd-title'] {
+}
+
+.sd-title-reg {
+    color: #6eba35;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 0 1em;
+
+    @include respond-to('tablets') {
+        font-size: 40px;
+    }
+
+    @include respond-to('mobiles') {
+        font-size: 35px;
+    }
+}

@@ -1,0 +1,39 @@
+include utils/variables/index
+include utils/mixins/index
+
+doctype html
+html
+    head
+        include head/head
+
+        block head-script
+            // jQuery library CDN
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+            // jQuery plugins scripts
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js")
+            script(src="js/external/jquery.youtubebackground.js")
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js")
+            script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
+            // Smart Display scripts
+            script(src="js/app.js")
+
+        block head-link
+            // Google Fonts
+            link(href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet")
+            // jQuery Plugins styles
+            link(href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet")
+            link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css")
+            link(rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css")
+            // Normaileze CSS
+            link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css")
+            // Smart Display styles
+            link(rel="stylesheet" href="style/styles.css")
+    body
+        include components/site-section/sd-hero
+        include components/site-section/sd-owl
+        include components/site-section/sd-tile
+        include components/site-section/sd-how-it-works
+        include components/site-section/sd-how-it-looks
+        include components/site-section/sd-specifications
+        include components/site-section/sd-buybox
+        include components/site-section/sd-copyright

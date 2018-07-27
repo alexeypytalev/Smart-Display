@@ -1,0 +1,9 @@
+mixin sd-buybox(data)
+    .sd-buybox
+        .sd-buybox__img
+            img(src= data.img, alt= data.title)
+        .sd-buybox__info
+            .sd-buybox__title= data.title
+            .sd-buybox__price= data.price
+            .sd-buybox__action
+                a.sd-btn-blue(href='#')= data.action.text

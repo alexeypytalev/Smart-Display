@@ -1,0 +1,305 @@
+.sd-tile {
+    position: relative;
+    overflow: hidden;
+
+    @include respond-to('desktop') {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &.is-active & {
+        &__popup {
+            max-height: 9999px;
+
+            @include respond-to('desktop') {
+                @include fade('show', .4s, transform);
+
+                transform: scale(1);
+            }
+        }
+
+        &__line {
+            &--link {
+                .sd-link-cplus {
+                    &:before {
+                        @include retina-sprite($s-minus-group);
+                    }
+
+                    span {
+                        &:first-child {
+                            display: none;
+                        }
+                        &:last-child {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:nth-child(odd) & {
+        @include respond-to('desktop') {
+            &__inner {
+                padding-left: 100px;
+            }
+        }
+    }
+
+    &:nth-child(even) & {
+        @include respond-to('desktop') {
+            &__section--img {
+                order: 1;
+            }
+
+            &__section--info {
+                align-items: flex-end;
+            }
+
+            &__inner {
+                padding-right: 100px;
+            }
+        }
+    }
+
+    &__section {
+        @include respond-to('desktop') {
+            width: 50%;
+        }
+
+        &--img {
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        &--info {
+            @include respond-to('desktop') {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    }
+
+    &__inner {
+        @include reset('inner-space');
+
+        padding: 40px 0;
+        max-width: 580px;
+        width: 90%;
+        margin: auto;
+
+        @include respond-to('desktop') {
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &__line {
+        margin-bottom: 30px;
+        text-align: center;
+
+        @include respond-to('desktop') {
+            text-align: left;
+        }
+
+        &--title {
+            line-height: 1.33;
+
+            .sd-title-reg {
+                text-align: inherit;
+                line-height: inherit;
+                margin-bottom: 0;
+            }
+        }
+
+        &--msg {
+            font-family: 'GoogleSans-Regular', sans-serif;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 1.44;
+        }
+
+        &--link {
+            .sd-link-cplus {
+                span {
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    &__msg {
+        display: inline-block;
+        border-radius: 10px;
+        background-color: #e3e3e3;
+        padding: .4em .8em;
+        max-width: 95%;
+
+        @include respond-to('desktop') {
+            margin-left: -.8em;
+        }
+    }
+
+    &__popup {
+        display: flex;
+        background-color: #fafafa;
+        position: relative;
+        box-shadow: inset 1px 1px 8px 2px rgba(#000, .1);
+        max-height: 0;
+        transition: max-height .4s;
+
+        @include respond-to('desktop') {
+            @include absolute(top left right bottom);
+            @include fade('hide', .4s, transform);
+
+            
+            max-height: none;
+            z-index: z(1);
+            transform: scale(.98);
+        }
+    }
+
+    &__popup-close {
+        display: none;
+        
+        @include respond-to('desktop') {
+            @include absolute(top 50px right 100px);
+
+            display: inline-block;
+            z-index: z(1);
+        }
+    }
+
+    &__popup-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        padding: 80px 0;
+        color: #222222;
+        font-size: 20px;
+        line-height: 1.5;
+
+        .l-container {
+            max-width: 500px;
+        }
+
+        @include respond-to('desktop') {
+            justify-content: center;
+
+            .sd-list-html-icon {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                max-width: none;
+
+                &__item {
+                    width: 45%;
+
+                    &:nth-last-child(-n + 2) {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .l-container {
+                max-width: none;
+            }
+        }
+    }
+
+    &__copyright {
+        @include respond-to('desktop') {
+            @include absolute(bottom 85px left right);
+
+            width: 90%;
+            margin: auto;
+            max-width: 1160px;
+        }
+        
+        color: #c4beb6;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .sd-site-section--autoplay & {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        
+        &__section {
+            width: 100%;
+
+            &--img {
+                order: 2;
+            }
+
+            &--info {
+                margin-bottom: 15px;
+
+                @include respond-to('desktop') {
+                    margin-bottom: 60px;
+                }
+            }
+        }
+
+        &__inner {
+            padding: 0 !important;
+            
+            @include respond-to('desktop') {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: center;
+                max-width: none;
+            }
+        }
+
+        &__line {
+            @include respond-to('desktop') {
+                &--title {
+                    width: 100%;
+                    margin-bottom: 50px;
+                    text-align: center;
+
+                    .sd-title-reg {
+                        max-width: 520px;
+                        margin: auto;
+                    }
+                }
+
+                &--msg {
+                    max-width: 50%;
+                    margin-bottom: 0;
+                    padding-right: 20px;
+                    text-align: right;
+                    margin-left: -2px;
+                }
+
+                &--descr {
+                    max-width: 50%;
+                    margin-bottom: 0;
+                    padding-left: 20px;
+                }
+            }
+        }
+
+        &__msg {
+            margin-left: 0;
+
+            @include respond-to('desktop') {
+                text-align: left;
+            }
+        }
+    }
+}

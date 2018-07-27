@@ -1,0 +1,76 @@
+.sd-owl-nav {
+    position: relative;
+
+    &__slide {
+        position: relative;
+
+        @include respond-to('desktop') {
+            max-width: 800px;
+        }
+
+        img {
+            opacity: .4;
+            transform: scale(.6);
+            transition-property: opacity, transform;
+            transition-duration: .8s;
+        }
+    }
+
+    &.owl-carousel {
+        .owl-item.active {
+            img {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @include respond-to('desktop') {
+            .owl-stage-outer {
+                overflow: visible;
+            }
+        }
+
+        .owl-nav {
+            margin: 0;
+
+            [class*='owl-'] {
+                outline: none;
+                
+                &.owl-prev {
+                    @include abs-center('left');
+                    @include retina-sprite($s-arr-left-group);
+                }
+
+                &.owl-next {
+                    @include abs-center('right');
+                    @include retina-sprite($s-arr-right-group);
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+
+        .owl-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+
+            .owl-dot {
+                width: 50px;
+                height: 3px;
+                background-color: #d8d8d8;
+                margin: 0 2px;
+
+                &.active {
+                    background-color: #6eba35;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
